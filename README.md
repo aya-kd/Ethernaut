@@ -51,7 +51,13 @@ contract.sendTransaction({from: player, to: this, value:0, data: "0xdd365b8b" })
 
 ---
  # 9. Vault
+<<<<<<< HEAD
 `web3.eth.getStorageAt(instance, "1")`
 `contract.unlock("0x412076657279207374726f6e67207365637265742070617373776f7264203a29")`
 ---
 
+=======
+ ```
+ web3.eth.getStorageAt(instance, "1")
+ ```
+>>>>>>> 62ddb36 (feat:updeated-README)
