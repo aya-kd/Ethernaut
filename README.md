@@ -115,7 +115,6 @@ contract.sendTransaction({from: player, to: this, value:0, data: "0xdd365b8b" })
  # 8. Force
 
 
-
  # 9. Vault
  ```
  web3.eth.getStorageAt(instance, "1")
