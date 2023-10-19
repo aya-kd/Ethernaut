@@ -88,7 +88,7 @@ contract Hack {
 
 # 5. Telephone
 In order to claim ownership, we need to call the `changeOwner()` method using an intermediate contract. This way, the `tx.origin` is going to be `player` and the `msg.sender` is going to be the address of the intermediate contract `Hack`.
-```
+```Solidity
 contract Hack {
 
     function attack(address _victim) external {
@@ -102,7 +102,7 @@ contract Hack {
 To increase our balance we use the `transfer()` method.  
 However, in order to get the maximum of tokens, we need to ensure that our balance is equal to the maximum value of `uint256`. 
 In order to get this value, we substract the amount we already have to prevent an overflow.
-```
+```Solidity
 tokenContract.transfer(msg.sender, type(uint).max - tokenContract.balanceOf(msg.sender)); 
 ```
 
@@ -125,7 +125,7 @@ web3.eth.getStorageAt(instance, "1")
 This level consists of a game to claim the King title. Our aim is to break it.  
 We notice that the previous king receives `msg.value` using `transfer()` and that the `msg.sender` becomes the king once the transfer is succeeded. But what if this previous king couldn't receive any ether?  
 So, in order to break the game, we need to make a contract that can't receive ether, in other words, it doesn't implement a `receive()` nor a `fallabck()` function.
-```
+```Solidity
 contract Hack{
     address public victim;
 
