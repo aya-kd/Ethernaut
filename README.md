@@ -9,7 +9,7 @@ contract.info1()
 ```
 Then...
 ```
-contract.info2()
+contract.info2("Hello")
 ```
 To get `infoNum`, we call its public getter
 ```
@@ -47,7 +47,7 @@ contract.contribute.sendTransaction({from: player, value: toWei("0.0001")})
 ```
 Afterwards, we send another non-zero amount to become an owner (received by the function `receive()`)
 ```
-contract.sendTransaction({from: player, value: toWei(0.0000001)})
+contract.sendTransaction({from: player, value: toWei("0.0000001")})
 ```
 We can now withdraw all of the contract's balance using `withdraw()`
 ```
